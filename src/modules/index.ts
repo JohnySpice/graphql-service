@@ -7,3 +7,5 @@ export * from './artists/resolvers/artist.resolver';
 export * from './artists/services/artist.service';
 
 export * from './bands/schemas/band.schema';
+export * from './bands/resolvers/band.resolver';
+export * from './bands/services/band.service';

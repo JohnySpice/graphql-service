@@ -1,5 +1,9 @@
 import { ApolloServer } from 'apollo-server';
-import { genreType, genresResolvers, GenreService, artistType, artistsResolvers, ArtistService, bandType, memberType } from './src/modules';
+import {
+  genreType, genresResolvers, GenreService,
+  artistType, artistsResolvers, ArtistService,
+  bandType, memberType, bandsResolvers, BandService
+} from './src/modules';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import 'dotenv/config';
 
@@ -7,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 
 const genres = makeExecutableSchema({
   typeDefs: [genreType, artistType, bandType, memberType],
-  resolvers: [genresResolvers, artistsResolvers]
+  resolvers: [genresResolvers, artistsResolvers, bandsResolvers]
 });
 
 const server = new ApolloServer({
@@ -18,6 +22,7 @@ const server = new ApolloServer({
     return {
       Genre: new GenreService(),
       Artist: new ArtistService(),
+      Band: new BandService(),
     };
   }
 });
