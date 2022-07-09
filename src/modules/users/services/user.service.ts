@@ -11,4 +11,9 @@ export class UserService extends RESTDataSource {
     item.id = item._id;
     return item;
   }
+
+  async login(email: string, password: string) {
+    const item = await this.post(`users/login`, { email, password });
+    return item.jwt;
+  }
 };

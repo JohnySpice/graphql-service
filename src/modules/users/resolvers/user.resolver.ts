@@ -1,7 +1,11 @@
 export const usersResolvers = {
   Query: {
-    user(_source: any, { id }: { id: string; }, { dataSources }: any) {
+    async user(_source: any, { id }: { id: string; }, { dataSources }: any) {
       return dataSources.User.getUser(id);
+    },
+
+    async jwt(_source: any, { email, password }: { email: string; password: string; }, { dataSources }: any) {
+      return dataSources.User.login(email, password);
     }
   },
 };

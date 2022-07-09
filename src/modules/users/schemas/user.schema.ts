@@ -9,5 +9,6 @@ export const userType = `
 
 type Query {
   user(id: ID!): User
+  jwt(email: String!, password: String!): String
 }
 `;
