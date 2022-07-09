@@ -1,6 +1,6 @@
 import { ApolloServer, gql, } from 'apollo-server';
 import { GenreService } from './src/modules/genres/services/genre.service';
-import { genreType } from './src/modules/genres/schemas/genre';
+import { genreType } from './src/modules/genres/schemas/genre.schema';
 import { resolvers } from './src/modules/genres/resolvers/genre.resolver';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import 'dotenv/config';
