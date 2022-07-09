@@ -17,3 +17,7 @@ export * from './albums/services/album.service';
 export * from './tracks/schemas/track.schema';
 export * from './tracks/resolvers/track.resolver';
 export * from './tracks/services/track.service';
+
+export * from './users/schemas/user.schema';
+export * from './users/resolvers/user.resolver';
+export * from './users/services/user.service';
