@@ -1,0 +1,25 @@
+{
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "_build",
+  ],
+  "compilerOptions": {
+    "target": "es2020",
+    "outDir": "_build",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "noImplicitReturns": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+  }
+}
