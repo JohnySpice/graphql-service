@@ -11,6 +11,7 @@ export class GenreService extends RESTDataSource {
     resp.items.forEach((i: any) => i.id = i._id);
     return resp.items;
   }
+
   async getGenre(id: string) {
     const item = await this.get(`genres/${id}`);
     item.id = item._id;
