@@ -1,7 +1,5 @@
-import { ApolloServer, gql, } from 'apollo-server';
-import { GenreService } from './src/modules/genres/services/genre.service';
-import { genreType } from './src/modules/genres/schemas/genre.schema';
-import { resolvers } from './src/modules/genres/resolvers/genre.resolver';
+import { ApolloServer } from 'apollo-server';
+import { genreType, genresResolvers, GenreService } from './src/modules';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import 'dotenv/config';
 
@@ -9,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 const genres = makeExecutableSchema({
   typeDefs: genreType,
-  resolvers
+  resolvers: genresResolvers
 });
 
 const server = new ApolloServer({
