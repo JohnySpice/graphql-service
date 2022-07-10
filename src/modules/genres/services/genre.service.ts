@@ -17,4 +17,36 @@ export class GenreService extends RESTDataSource {
     item.id = item._id;
     return item;
   }
+
+  async createGenre(data: any, token: string) {
+    const genre = await this.post(`genres`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    genre.id = genre._id;
+    return genre;
+  }
+
+  async deleteGenre(id: string, token: string) {
+    const result = await this.delete(`genres/${id}`, undefined,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    return result;
+  }
+
+  async updateGenre(id: string, data: any, token: string) {
+    const genre = await this.put(`genres/${id}`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    genre.id = genre._id;
+    return genre;
+  }
 };
