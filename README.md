@@ -25,7 +25,7 @@ Clone repository [here](https://github.com/rolling-scopes-school/node-graphql-se
 
 * App served @ `http://localhost:8080` without nodemon
 ---
-After start, go to address wrote in console
+After start, go to address wrote in console  
 
 Now you can make requests, using appollo studio, just by clicking which resource and fields you want
 ---
