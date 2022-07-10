@@ -31,5 +31,19 @@ export const albumsResolvers = {
       const genres = await dataSources.Genre.getGenres();
       return genres.filter((g: any) => _source.genresIds.includes(g.id));
     }
+  },
+
+  Mutation: {
+    async createAlbum(_source: any, _args: any, { dataSources, token }: any) {
+      return dataSources.Album.createAlbum(_args, token);
+    },
+
+    async deleteAlbum(_source: any, { id }: any, { dataSources, token }: any) {
+      return dataSources.Album.deleteAlbum(id, token);
+    },
+
+    async updateAlbum(_source: any, { id, ..._args }: any, { dataSources, token }: any) {
+      return dataSources.Album.updateAlbum(id, _args, token);
+    }
   }
 };
