@@ -16,4 +16,36 @@ export class ArtistService extends RESTDataSource {
     item.id = item._id;
     return item;
   }
+
+  async createArtist(data: any, token: string) {
+    const artist = await this.post(`artists`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    artist.id = artist._id;
+    return artist;
+  }
+
+  async deleteArtist(id: string, token: string) {
+    const result = await this.delete(`artists/${id}`, undefined,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    return result;
+  }
+
+  async updateArtist(id: string, data: any, token: string) {
+    const artist = await this.put(`artists/${id}`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    artist.id = artist._id;
+    return artist;
+  }
 };

@@ -20,6 +20,7 @@ const server = new ApolloServer({
   schema: genres,
   csrfPrevention: true,
   cache: 'bounded',
+  context: ({ req }) => ({ token: req.headers.authorization || '' }),
   dataSources: () => {
     return {
       Genre: new GenreService(),
