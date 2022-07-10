@@ -29,7 +29,7 @@ type Mutation {
         birthDate: String
         birthPlace: String
         country: String
-        bands: [String]
+        bandsIds: [String]
         instruments: [String]): Artist
 
     deleteArtist(id: ID!): Result
@@ -41,7 +41,7 @@ type Mutation {
         birthDate: String
         birthPlace: String
         country: String
-        bands: [String]
+        bandsIds: [String]
         instruments: [String]): Artist
 }
 `;

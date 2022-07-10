@@ -19,10 +19,10 @@ type Mutation {
     createAlbum(
         name: String
         released: Int
-        artists: [String]
-        bands: [String]
-        tracks: [String]
-        genres: [String]
+        artistsIds: [String]
+        bandsIds: [String]
+        trackIds: [String]
+        genresIds: [String]
         image: String): Album
 
     deleteAlbum(id: ID!): Result
@@ -30,10 +30,10 @@ type Mutation {
         id: ID!,
         name: String
         released: Int
-        artists: [String]
-        bands: [String]
-        tracks: [String]
-        genres: [String]
+        artistsIds: [String]
+        bandsIds: [String]
+        trackIds: [String]
+        genresIds: [String]
         image: String): Album
 }
 

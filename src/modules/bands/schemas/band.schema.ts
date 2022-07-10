@@ -17,18 +17,18 @@ type Mutation {
     createBand(
         name: String
         origin: String
-        members: [String]
+        membersId: [String]
         website: String
-        genres: [String]): Band
+        genresIds: [String]): Band
 
     deleteBand(id: ID!): Result
     updateBand(
         id: ID!
         name: String
         origin: String
-        members: [String]
+        membersId: [String]
         website: String
-        genres: [String]): Band
+        genresIds: [String]): Band
 }
 `;
 

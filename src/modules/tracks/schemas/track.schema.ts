@@ -19,8 +19,8 @@ type Mutation {
     createTrack(
         title: String!
         albumId: String
-        artists: [String]
-        bands: [String]
+        artistsIds: [String]
+        bandsIds: [String]
         duration: Int
         released: Int
         genresIds: [String]): Track
@@ -30,8 +30,8 @@ type Mutation {
         id: ID!
         title: String
         album: String
-        artists: [String]
-        bands: [String]
+        artistsIds: [String]
+        bandsIds: [String]
         duration: Int
         released: Int
         genresIds: [String]): Track
