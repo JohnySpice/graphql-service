@@ -29,5 +29,19 @@ export const tracksResolvers = {
       const genres = await dataSources.Genre.getGenres();
       return genres.filter((g: any) => _source.genresIds.includes(g.id));
     }
+  },
+
+  Mutation: {
+    async createTrack(_source: any, _args: any, { dataSources, token }: any) {
+      return dataSources.Track.createTrack(_args, token);
+    },
+
+    async deleteTrack(_source: any, { id }: any, { dataSources, token }: any) {
+      return dataSources.Track.deleteTrack(id, token);
+    },
+
+    async updateTrack(_source: any, { id, ..._args }: any, { dataSources, token }: any) {
+      return dataSources.Track.updateTrack(id, _args, token);
+    }
   }
 };
