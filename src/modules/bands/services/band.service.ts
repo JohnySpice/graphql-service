@@ -18,4 +18,36 @@ export class BandService extends RESTDataSource {
     item.id = item._id;
     return item;
   }
+
+  async createBand(data: any, token: string) {
+    const band = await this.post(`bands`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    band.id = band._id;
+    return band;
+  }
+
+  async deleteBand(id: string, token: string) {
+    const result = await this.delete(`bands/${id}`, undefined,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    return result;
+  }
+
+  async updateBand(id: string, data: any, token: string) {
+    const band = await this.put(`bands/${id}`, data,
+      {
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+    band.id = band._id;
+    return band;
+  }
 };

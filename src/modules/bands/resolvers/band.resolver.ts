@@ -20,5 +20,19 @@ export const bandsResolvers = {
       const genres = await dataSources.Artist.getArtists();
       return genres.filter((g: any) => _source.members.includes(g.id));
     },
+  },
+
+  Mutation: {
+    async createBand(_source: any, _args: any, { dataSources, token }: any) {
+      return dataSources.Band.createBand(_args, token);
+    },
+
+    async deleteBand(_source: any, { id }: any, { dataSources, token }: any) {
+      return dataSources.Band.deleteBand(id, token);
+    },
+
+    async updateBand(_source: any, { id, ..._args }: any, { dataSources, token }: any) {
+      return dataSources.Band.updateBand(id, _args, token);
+    }
   }
 };
