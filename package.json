@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon index.ts"
+    "start:dev": "nodemon index.ts",
+    "start": "tsc && node _build/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,7 @@
   "dependencies": {
     "apollo-datasource-rest": "^3.6.1",
     "apollo-server": "^3.9.0",
-    "dot-env": "^0.0.1",
+    "dotenv": "^16.0.1",
     "graphql": "^16.5.0"
   },
   "devDependencies": {
