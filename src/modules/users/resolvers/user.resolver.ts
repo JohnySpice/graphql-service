@@ -8,4 +8,10 @@ export const usersResolvers = {
       return dataSources.User.login(email, password);
     }
   },
+
+  Mutation: {
+    async register(_source: any, _args: any, { dataSources }: any) {
+      return dataSources.User.register(_args);
+    },
+  }
 };

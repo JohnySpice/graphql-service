@@ -2,7 +2,7 @@ export const userType = `
   type User {
   id: ID!
   firstName: String
-  secondName: String
+  lastName: String
   password: String
   email: String!
 }
@@ -10,5 +10,14 @@ export const userType = `
 type Query {
   user(id: ID!): User
   jwt(email: String!, password: String!): String
+}
+
+type Mutation {
+  register(
+    firstName: String
+    lastName: String
+    password: String
+    email: String!
+      ): User
 }
 `;
